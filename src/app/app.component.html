@@ -1,52 +1,17 @@
+<!-- Bu dosya, 'app.component.ts' dosyasındaki AppComponent bileşeninin HTML şablonunu içerir -->
 
-<!DOCTYPE html>
-<html ng-app="myApp">
-<head>
-  <title>AngularJS Website</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-  <style>
-    /* Burada CSS stil tanımlamaları yapılabilir */
-    body {
-      font-family: Arial, sans-serif;
-    }
-    /* Örnek bir stil tanımlaması */
-    .container {
-      width: 80%;
-      margin: 0 auto;
-    }
-  </style>
-</head>
-<body>
+<div class="container">
+  <h1>Hoş Geldiniz!</h1>
+  <p>Bu bir örnek Angular bileşenidir.</p>
 
-<div ng-controller="myCtrl" class="container">
-  <header>
-    <h1>{{ siteTitle }}</h1>
-    <nav>
-      <ul>
-        <li><a href="#/">Ana Sayfa</a></li>
-        <li><a href="#/about">Hakkımızda</a></li>
-        <li><a href="#/contact">İletişim</a></li>
-      </ul>
-    </nav>
-  </header>
-  
-  <main>
-    <section ng-view></section>
-  </main>
-  
-  <footer>
-    <p>Telif Hakkı © {{ currentYear }} AngularJS Website</p>
-  </footer>
+  <!-- Örnek bir liste -->
+  <ul>
+    <li *ngFor="let item of itemList">{{ item }}</li>
+  </ul>
+
+  <!-- Örnek bir form -->
+  <form (submit)="submitForm()">
+    <input type="text" [(ngModel)]="formData" placeholder="Veri girin">
+    <button type="submit">Gönder</button>
+  </form>
 </div>
-
-<script>
-  var app = angular.module('myApp', []);
-
-  app.controller('myCtrl', function($scope) {
-    $scope.siteTitle = 'Hoş Geldiniz!';
-    $scope.currentYear = new Date().getFullYear();
-  });
-</script>
-
-</body>
-</html>
