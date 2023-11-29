@@ -1,35 +1,44 @@
-.logo img {
-  padding: 30px 0;
-  width: 100%;
-}
+/* Bu dosya, 'app.component.html' dosyasındaki öğelere stil uygular */
 
-.resource-list {
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: larger;
-  padding: 10px;
-  text-align: center;
-}
-
-.resource-list ul {
-    text-align: left;
-    margin: 0 auto;
-    width: 300px;
-}
-
-.resource-list a {
-  color: black;
-  line-height: 30px;
-}
-
-footer {
-  bottom: 10px;
-  font-family: Helvetica, Arial, sans-serif;
+.container {
+  max-width: 800px;
   margin: 0 auto;
-  width: 100%;
-  position: fixed;
-  text-align: center;
+  padding: 20px;
+  background-color: #f0f0f0;
 }
 
-footer img {
-    width: 20px;
+h1 {
+  color: #333;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+form {
+  margin-top: 20px;
+}
+
+input[type="text"] {
+  width: 200px;
+  padding: 5px;
+  font-size: 14px;
+}
+
+button {
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
 }
