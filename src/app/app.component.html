@@ -1,1 +1,52 @@
 
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <title>AngularJS Website</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <style>
+    /* Burada CSS stil tanımlamaları yapılabilir */
+    body {
+      font-family: Arial, sans-serif;
+    }
+    /* Örnek bir stil tanımlaması */
+    .container {
+      width: 80%;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+<div ng-controller="myCtrl" class="container">
+  <header>
+    <h1>{{ siteTitle }}</h1>
+    <nav>
+      <ul>
+        <li><a href="#/">Ana Sayfa</a></li>
+        <li><a href="#/about">Hakkımızda</a></li>
+        <li><a href="#/contact">İletişim</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <section ng-view></section>
+  </main>
+  
+  <footer>
+    <p>Telif Hakkı © {{ currentYear }} AngularJS Website</p>
+  </footer>
+</div>
+
+<script>
+  var app = angular.module('myApp', []);
+
+  app.controller('myCtrl', function($scope) {
+    $scope.siteTitle = 'Hoş Geldiniz!';
+    $scope.currentYear = new Date().getFullYear();
+  });
+</script>
+
+</body>
+</html>
